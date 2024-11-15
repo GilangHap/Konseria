@@ -28,7 +28,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000000;
+    background-color: #007bff;
     padding: 10px 20px;
   }
   
@@ -89,7 +89,7 @@
   }
   .carousel {
     background-color: #e0e0e0;
-    margin-top: 100px;
+    margin-top: 50px;
     height: 400px;
     display: flex;
     justify-content: center;
@@ -99,7 +99,6 @@
   }
   
   .carousel-container {
-    margin-top: 300px;
     display: flex;
     /* transition: transform 0.5s ease-in-out; */
   }
