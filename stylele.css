@@ -1,0 +1,271 @@
+/* Styling untuk bagian main */
+* {
+    text-decoration: none;
+  }
+  @font-face {
+    font-family: "Laurasia";
+    src: url("Laurasia/Laurasia.ttf");
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  h1,
+  h3 {
+    margin: 0;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Laurasia";
+  }
+  
+  .logo-img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  .search-bar button {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+
+}
+
+.create-event {
+  background-color: yellow;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Styling untuk Main dan Event Detail */
+main {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+}
+
+.event-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.event-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.event-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.event-image {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-info {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.organizer-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.organizer-info img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.organizer-info span {
+  font-size: 18px;
+  color: #555;
+}
+
+.event-details {
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #555;
+}
+
+.detail-item i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.ticket-section {
+  margin-top: 20px;
+}
+
+.ticket-price {
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #ffcc00;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #e6b800;
+}
+
+.event-description {
+  margin-top: 40px;
+}
+
+.event-description h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.event-description p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .footer-logo h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-social a i {
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s;
+  }
+  
+  .footer-social a i:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    font-size: 14px;
+  }

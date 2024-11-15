@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keranjang Tiket</title>
+  <link rel="stylesheet" href="keranjang.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Kontainer Keranjang -->
+    <div class="cart-container">
+      <h1>Keranjang Tiket</h1>
+
+      <!-- Informasi Pelanggan -->
+      <div class="customer-info">
+        <h2>Informasi Pelanggan</h2>
+        <form id="customerForm">
+          <div class="form-group">
+            <label for="fullName">Nama Lengkap</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Masukkan nama lengkap" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email" required />
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">Nomor WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Contoh: 628123456789" pattern="^62[0-9]{9,12}$" required />
+          </div>
+        </form>
+      </div>
+
+      <!-- Daftar Tiket -->
+      <div class="cart-items">
+        <h2>Daftar Tiket</h2>
+        <div id="cartItemsList">
+          <!-- Item keranjang akan ditambahkan secara dinamis oleh keranjang.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Ringkasan Pesanan -->
+    <div class="order-summary">
+      <h2>Ringkasan Pesanan</h2>
+      <div class="summary-details">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotalPrice">Rp 0</span>
+        </div>
+        <div class="summary-row">
+          <span>Biaya Admin</span>
+          <span id="adminFee">Rp 5.000</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total Pembayaran</span>
+          <span id="totalPrice">Rp 0</span>
+        </div>
+      </div>
+      <button id="checkoutButton" class="btn-checkout">Lanjut Pembayaran</button>
+    </div>
+  </div>
+
+  <!-- Midtrans Snap JS -->
+  <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-_S4uNUfgVshloPJU"></script>
+  <!-- File Keranjang -->
+  <script src="keranjang.js"></script>
+</body>
+</html>

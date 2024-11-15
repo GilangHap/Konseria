@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Event - Konseria</title>
+    <link rel="shortcut icon" href="images/konseria.png" />
+    <link rel="stylesheet" href="stylele.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/konseria kuning.png" alt="Konseria Logo" class="logo-img"></a>
+                Konseria
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Hubungi Kami</a></li>
+                </ul>   
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="eventSearch" placeholder="Cari event...">
+                <button id="searchBtn">🔍</button>
+            </div>
+            <a href="add-event.html" target="_blank"><button class="create-event">Buat Event</button></a>
+        </div>  
+    </header>
+
+    <main>
+        <section class="event-detail-container">
+            <div class="event-header">
+                <h1 id="eventTitle">Nama Event</h1>
+            </div>
+            
+            <div class="event-content">
+                <div class="event-image">
+                    <img id="eventMainImage" src="" alt="Event Image">
+                </div>
+                <div class="event-info">
+                    <div class="organizer-info">
+                        <img id="organizerLogo" src="" alt="Organizer Logo">
+                        <span id="organizerName"></span>
+                    </div>
+
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="eventDate"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span id="eventTime"></span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span id="eventLocation"></span>
+                        </div>
+                    </div>
+
+                    <div class="ticket-section">
+                        <div class="ticket-price" id="ticketPrice">
+                            Harga Tiket: Rp 0
+                        </div>
+                        <button id="buyTicketBtn" class="btn-primary">Beli Tiket</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-description">
+                <h3>Deskripsi Event</h3>
+                <p id="eventDescription"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/konseria kuning.png" alt="Konseria Logo">
+            <h2>Konseria</h2>
+        </div>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.x.com/">
+                <i class="fab fa-x"></i>
+            </a>
+            <a href="https://www.tiktok.com/">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Konseria. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="detail.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f7f6;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #3498db;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Form Styles */
+#addEventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Styles */
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus, 
+textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Button Styles */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(52, 152, 219, 0.2);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input, textarea, button {
+        font-size: 16px;
+    }
+}
+
+/* Form Validation and Error States */
+input:invalid, 
+textarea:invalid {
+    border-color: #e74c3c;
+}
+
+input:valid, 
+textarea:valid {
+    border-color: #2ecc71;
+}
+
+/* Additional Decorative Elements */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    height: 10px;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Optional: Placeholder Styles */
+::placeholder {
+    color: #a0a0a0;
+    opacity: 0.7;
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.success {
+    background-color: #2ecc71;
+}
+
+.toast.error {
+    background-color: #e74c3c;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.error {
+    border: 2px solid #e74c3c !important;
+}
