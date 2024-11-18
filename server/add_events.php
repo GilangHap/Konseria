@@ -8,7 +8,7 @@ header('Content-Type: application/json');
 $data = json_decode(file_get_contents('php://input'), true);
 
 // Validasi data yang diterima
-if (isset($data['title'], $data['description'], $data['date'], $data['time'], $data['location'], $data['organizer'], $data['organizerImage'], $data['imageURL'], $data['slug'], $data['ticketPrice'])) {
+if (isset($data['title'], $data['description'], $data['date'], $data['time'], $data['location'], $data['organizer'], $data['organizerImage'], $data['imageURL'], $data['availableTickets'], $data['ticketPrice'])) {
     
     // Koneksi ke database
     $host = 'localhost';
@@ -26,7 +26,7 @@ if (isset($data['title'], $data['description'], $data['date'], $data['time'], $d
 
     // Menyimpan data ke database
     try {
-        $stmt = $pdo->prepare("INSERT INTO event (title, description, date, time, location, organizer, organizerImage, imageURL, slug, ticketPrice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO event (title, description, date, time, location, organizer, organizerImage, imageURL, availableTickets, ticketPrice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([
             $data['title'],
             $data['description'],
@@ -36,7 +36,7 @@ if (isset($data['title'], $data['description'], $data['date'], $data['time'], $d
             $data['organizer'],
             $data['organizerImage'],
             $data['imageURL'],
-            $data['slug'],
+            $data['availableTickets'],
             $data['ticketPrice']
         ]);
 

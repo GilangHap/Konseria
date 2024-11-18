@@ -19,9 +19,18 @@ if (!$data) {
     exit;
 }
 
+if (!isset($data['total'], $data['orderId'], $data['items'], $data['customer'])) {
+    echo json_encode(['success' => false, 'message' => 'Missing required data.']);
+    exit;
+}
+
+file_put_contents('log.txt', "Total dari Frontend: " . $data['total'] . PHP_EOL, FILE_APPEND);
+
 // Buat payload Snap
 $order_id = $data['orderId'];
-$gross_amount = $data['total'];
+$gross_amount = $data['total']; // Menambahkan biaya admin
+
+file_put_contents('log.txt', "Gross Amount yang dikirim: $gross_amount" . PHP_EOL, FILE_APPEND);
 
 $item_details = array_map(function ($item) {
     return [
@@ -46,9 +55,14 @@ $transactionDetails = [
     ]
 ];
 
+file_put_contents('log.txt', "Transaction Details: " . print_r($transactionDetails, true) . PHP_EOL, FILE_APPEND);
+
 try {
     $snapToken = Snap::getSnapToken($transactionDetails);
+    file_put_contents('log.txt', "Snap Token: $snapToken", FILE_APPEND);
     echo json_encode(['success' => true, 'token' => $snapToken]);
 } catch (Exception $e) {
+    file_put_contents('log.txt', "Error: " . $e->getMessage(), FILE_APPEND);
     echo json_encode(['success' => false, 'message' => $e->getMessage()]);
 }
+?>

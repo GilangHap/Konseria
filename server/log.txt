@@ -1,0 +1,489 @@
+Snap Token: 66eb34b4-ff78-47f0-8e60-dc80283f1634Snap Token: 5f92c8ec-7df4-4e34-b306-e51b94aa002cSnap Token: 4de26933-121d-4e19-965a-55f452ce1554Snap Token: 88c6ef36-c64a-4b10-8f45-930e000d4ed5Total dari Frontend: 361000
+Gross Amount yang dikirim: 
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731726398353
+            [gross_amount] => 366000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 4
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 8e9e18c3-295e-41be-a5c5-52dd34adc8daTotal dari Frontend: 361000
+Gross Amount yang dikirim: 
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731726478606
+            [gross_amount] => 366000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 4
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 42f19eac-a941-477f-8b5b-e08300936c0aTotal dari Frontend: 361000
+Gross Amount yang dikirim: 366000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731726560839
+            [gross_amount] => 366000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 4
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 0aa1672a-a49c-4f41-8c58-3c3664f1e585Total dari Frontend: 361000
+Gross Amount yang dikirim: 361000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731727013796
+            [gross_amount] => 361000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 4
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 1e580608-e00a-4776-ae97-17d750b8ab72Total dari Frontend: 539000
+Gross Amount yang dikirim: 539000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731740809659
+            [gross_amount] => 539000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 6
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Error: CURL Error: Could not resolve host: app.sandbox.midtrans.comTotal dari Frontend: 539000
+Gross Amount yang dikirim: 539000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731740812322
+            [gross_amount] => 539000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 6
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Error: CURL Error: Could not resolve host: app.sandbox.midtrans.comTotal dari Frontend: 539000
+Gross Amount yang dikirim: 539000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731740865948
+            [gross_amount] => 539000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 6
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: fdc06e6e-b658-4a8f-bc47-7a48506452f6Total dari Frontend: 539000
+Gross Amount yang dikirim: 539000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731740875521
+            [gross_amount] => 539000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 6
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: b89847cb-423b-4837-8c6c-16a6f138b8bcTotal dari Frontend: 539000
+Gross Amount yang dikirim: 539000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731740889317
+            [gross_amount] => 539000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 6
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 5afada92-2d0e-446e-928f-c6587fe6f89dTotal dari Frontend: 183000
+Gross Amount yang dikirim: 183000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731743613414
+            [gross_amount] => 183000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 2
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: f01da776-92d6-4c97-b501-b18fa174f33fTotal dari Frontend: 94000
+Gross Amount yang dikirim: 94000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731743815055
+            [gross_amount] => 94000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 1
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Andhika
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 6281931238181
+        )
+
+)
+
+Snap Token: cbf5e81f-f643-4db9-b7e2-130c7f83ac8fTotal dari Frontend: 170000
+Gross Amount yang dikirim: 170000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731749600190
+            [gross_amount] => 170000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 7
+                    [price] => 50000
+                    [quantity] => 2
+                    [name] => On Fest 2024
+                )
+
+            [1] => Array
+                (
+                    [id] => 6
+                    [price] => 65000
+                    [quantity] => 1
+                    [name] => Pesta Bergoyang
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Panca
+            [last_name] => Aziz
+            [email] => pancaaziz123@gmail.com
+            [phone] => 6287777242310
+        )
+
+)
+
+Snap Token: 91d35a64-55de-4591-a413-88bde58c99b6Total dari Frontend: 94000
+Gross Amount yang dikirim: 94000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731772424833
+            [gross_amount] => 94000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 1
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Gilhep
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 08123457678
+        )
+
+)
+
+Snap Token: 11ab3e2e-73f8-45e6-9248-f2de7644d1d8Total dari Frontend: 94000
+Gross Amount yang dikirim: 94000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731772756744
+            [gross_amount] => 94000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 1
+                    [name] => MAKNAFESTIVA
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: ca127fb0-18f0-4f65-8462-1a91d3b7a972Total dari Frontend: 90000
+Gross Amount yang dikirim: 90000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1731773438871
+            [gross_amount] => 90000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 4
+                    [price] => 85000
+                    [quantity] => 1
+                    [name] => Seismic
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Panca
+            [last_name] => Aziz
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: f40a079b-a15d-4b1b-9f0f-56249b6479af

@@ -1,244 +1,253 @@
 * {
-    text-decoration: none;
-  }
-  @font-face {
-    font-family: "Laurasia";
-    src: url("Laurasia/Laurasia.ttf");
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-  }
-  
-  h1,
-  h3 {
-    margin: 0;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 30px;
-  }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #007bff;
-    padding: 10px 20px;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Laurasia";
-  }
-  
-  .logo-img {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-  
-  .search-bar input {
-    border: none;
-    outline: none;
-    padding: 5px;
-    border-radius: 20px;
-  }
-  .search-bar button {
-    border: none;
-    background-color: white;
-    cursor: pointer;
-  }
-  
-  .create-event {
-    background-color: yellow;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  .carousel {
-    background-color: #e0e0e0;
-    margin-top: 50px;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel-container {
-    display: flex;
-    /* transition: transform 0.5s ease-in-out; */
-  }
-  
-  .carousel-slide {
-    min-width: 100%;
-    transition: 0.5s;
-  }
-  
-  .carousel-slide img {
-    width: 100%;
-    height: auto;
-  }
-  .carousel-prev,
-  .carousel-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-  }
-  
-  .carousel-prev {
-    left: 10px;
-  }
-  
-  .carousel-next {
-    right: 10px;
-  }
-  
-  .event-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    gap: 20px; /* Sesuaikan jarak antar card */
-    padding: 20px;
-    width: 100%;
-    margin: 0 auto; /* Pusatkan grid */
-  }
-  
-  .event-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 450px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    text-align: left;
-  }
-  .event-card:hover {
-    transform: scale(1.05); /* Efek hover opsional */
-  }
-  
-  .event-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .event-card h3 {
-    margin: 10px 0;
-    font-size: 18px;
-  }
-  
-  .event-card p {
-    margin: 5px 0;
-    color: #555;
-  }
-  
-  .event-card button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    align-self: flex-end;
-  }
-  
-  .event-detail-container {
-    border: 1px solid;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    /* padding-left: -00px; */
-    width: 100%;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  footer {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .footer-logo img {
-    width: 50px;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .footer-logo h2 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-social a i {
-    font-size: 24px;
-    color: white;
-    transition: transform 0.3s;
-  }
-  
-  .footer-social a i:hover {
-    transform: scale(1.1);
-  }
-  
-  .footer-bottom {
-    font-size: 14px;
-  }
-  
-  
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Laurasia";
+  src: url("Laurasia/Laurasia.ttf");
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+h1,
+h3 {
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Laurasia";
+}
+
+.logo-img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 20px;
+}
+.search-bar button {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.create-event {
+  background-color: yellow;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.carousel {
+  background-color: #e0e0e0;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%; /* Setiap slide mengambil 100% lebar */
+  height: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%; /* Pastikan gambar mengisi slide sepenuhnya */
+  object-fit: cover; /* Potong gambar agar sesuai tanpa distorsi */
+}
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+.event-card-link {
+  text-decoration: none; /* Menghapus garis bawah */
+  color: black; /* Warna teks hitam */
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 20px; /* Sesuaikan jarak antar card */
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto; /* Pusatkan grid */
+}
+
+.event-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  text-align: left;
+}
+.event-card:hover {
+  transform: scale(1.05); /* Efek hover opsional */
+}
+
+.event-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.event-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.event-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.event-card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  align-self: flex-end;
+}
+
+.event-card button:hover{
+  background-color: #00346b;;
+}
+
+.event-detail-container {
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  /* padding-left: -00px; */
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+}
+
+footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-social a i {
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.footer-social a i:hover {
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  font-size: 14px;
+}

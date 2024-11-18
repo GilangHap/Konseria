@@ -1,121 +1,187 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Tambah Event - Konseria</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="shortcut icon" href="images/konseria.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Tambah Event Baru</h1>
-        <form id="addEventForm">
-            <input type="text" id="eventTitle" placeholder="Judul Event" required aria-label="Judul Event"><br>
-            <textarea id="eventDescription" placeholder="Deskripsi Event" required aria-label="Deskripsi Event"></textarea><br>
-            <input type="date" id="eventDate" required aria-label="Tanggal Event"><br>
-            <input type="text" id="eventTime" placeholder="Waktu Event (HH:MM)" required aria-label="Waktu Event"><br>
-            <input type="text" id="eventLocation" placeholder="Lokasi" required aria-label="Lokasi"><br>
-            <input type="text" id="eventOrganizer" placeholder="Nama Penyelenggara" required aria-label="Nama Penyelenggara"><br>
-            <input type="text" id="organizerImage" placeholder="URL Gambar Penyelenggara" required aria-label="URL Gambar Penyelenggara"><br>
-            <input type="text" id="imageURL" placeholder="URL Gambar Event" required aria-label="URL Gambar Event"><br>
-            <input type="text" id="eventSlug" placeholder="Slug Event" required aria-label="Slug Event"><br>
-            <input type="number" id="ticketPrice" placeholder="Harga Tiket" required aria-label="Harga Tiket"><br>
-            <button type="submit">Tambah Event</button>
-        </form>
+      <h1>Tambah Event Baru</h1>
+      <form id="addEventForm" action="index.html">
+        <input
+          type="text"
+          id="eventTitle"
+          placeholder="Judul Event"
+          required
+          aria-label="Judul Event"
+        /><br />
+        <textarea
+          id="eventDescription"
+          placeholder="Deskripsi Event"
+          required
+          aria-label="Deskripsi Event"
+        ></textarea
+        ><br />
+        <input
+          type="date"
+          id="eventDate"
+          required
+          aria-label="Tanggal Event"
+        /><br />
+        <input
+          type="text"
+          id="eventTime"
+          placeholder="Waktu Event (HH:MM)"
+          required
+          aria-label="Waktu Event"
+        /><br />
+        <input
+          type="text"
+          id="eventLocation"
+          placeholder="Lokasi"
+          required
+          aria-label="Lokasi"
+        /><br />
+        <input
+          type="text"
+          id="eventOrganizer"
+          placeholder="Nama Penyelenggara"
+          required
+          aria-label="Nama Penyelenggara"
+        /><br />
+        <input
+          type="text"
+          id="organizerImage"
+          placeholder="URL Gambar Penyelenggara"
+          required
+          aria-label="URL Gambar Penyelenggara"
+        /><br />
+        <input
+          type="text"
+          id="imageURL"
+          placeholder="URL Gambar Event"
+          required
+          aria-label="URL Gambar Event"
+        /><br />
+        <input
+          type="number"
+          id="availableTickets"
+          placeholder="Jumlah Tiket"
+          required
+          aria-label="Jumlah Tiket"
+        /><br />
+        <input
+          type="number"
+          id="ticketPrice"
+          placeholder="Harga Tiket"
+          required
+          aria-label="Harga Tiket"
+        /><br />
+        <button type="submit">Tambah Event</button>
+      </form>
     </div>
 
     <script>
-        document.getElementById('addEventForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Ambil semua elemen input
-            const eventTitleInput = document.getElementById('eventTitle');
-            const eventDescriptionInput = document.getElementById('eventDescription');
-            const eventDateInput = document.getElementById('eventDate');
-            const eventTimeInput = document.getElementById('eventTime');
-            const eventLocationInput = document.getElementById('eventLocation');
-            const eventOrganizerInput = document.getElementById('eventOrganizer');
-            const organizerImageInput = document.getElementById('organizerImage');
-            const imageURLInput = document.getElementById('imageURL');
-            const eventSlugInput = document.getElementById('eventSlug');
-            const ticketPriceInput = document.getElementById('ticketPrice');
+      document
+        .getElementById("addEventForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-            // Siapkan data event
-            const newEvent = {
-                title: eventTitleInput.value.trim(),
-                description: eventDescriptionInput.value.trim(),
-                date: eventDateInput.value,
-                time: eventTimeInput.value,
-                location: eventLocationInput.value.trim(),
-                organizer: eventOrganizerInput.value.trim(),
-                organizerImage: organizerImageInput.value.trim(),
-                imageURL: imageURLInput.value.trim(),
-                slug: eventSlugInput.value.trim(),
-                ticketPrice: parseFloat(ticketPriceInput.value)
-            };
+          // Ambil semua elemen input
+          const eventTitleInput = document.getElementById("eventTitle");
+          const eventDescriptionInput =
+            document.getElementById("eventDescription");
+          const eventDateInput = document.getElementById("eventDate");
+          const eventTimeInput = document.getElementById("eventTime");
+          const eventLocationInput = document.getElementById("eventLocation");
+          const eventOrganizerInput = document.getElementById("eventOrganizer");
+          const organizerImageInput = document.getElementById("organizerImage");
+          const imageURLInput = document.getElementById("imageURL");
+          const availableTicketsinput =
+            document.getElementById("availableTickets");
+          const ticketPriceInput = document.getElementById("ticketPrice");
 
-            // Tambahkan loading state pada tombol
-            const submitButton = e.target.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'Menambahkan...';
+          // Siapkan data event
+          const newEvent = {
+            title: eventTitleInput.value.trim(),
+            description: eventDescriptionInput.value.trim(),
+            date: eventDateInput.value,
+            time: eventTimeInput.value,
+            location: eventLocationInput.value.trim(),
+            organizer: eventOrganizerInput.value.trim(),
+            organizerImage: organizerImageInput.value.trim(),
+            imageURL: imageURLInput.value.trim(),
+            availableTickets: parseFloat(availableTicketsinput.value),
+            ticketPrice: parseFloat(ticketPriceInput.value),
+          };
 
-            // Kirim data ke server
-            try {
-                const response = await fetch('server/add_events.php', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(newEvent)
-                });
+          // Tambahkan loading state pada tombol
+          const submitButton = e.target.querySelector('button[type="submit"]');
+          submitButton.disabled = true;
+          submitButton.innerHTML = "Menambahkan...";
 
-                const result = await response.json();
+          // Kirim data ke server
+          try {
+            const response = await fetch("server/add_events.php", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(newEvent),
+            });
 
-                if (result.status === 'success') {
-                    showSuccessToast(result.message);
-                    e.target.reset(); // // Reset form setelah sukses
-                } else {
-                    showErrorToast(result.message);
-                }
-            } catch (error) {
-                console.error("Error adding event: ", error);
-                showErrorToast('Gagal menambahkan event');
-            } finally {
-                // Kembalikan tombol ke keadaan semula
-                submitButton.disabled = false;
-                submitButton.innerHTML = 'Tambah Event';
+            const result = await response.json();
+
+            if (result.status === "success") {
+              showSuccessToast(result.message);
+              e.target.reset();
+              setTimeout(() => {
+                window.location.href = "index.html";
+              }, 3000);
+            } else {
+              showErrorToast(result.message);
             }
+          } catch (error) {
+            console.error("Error adding event: ", error);
+            showErrorToast("Gagal menambahkan event");
+          } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = "Tambah Event";
+          }
         });
 
-        // Fungsi toast modern (contoh sederhana)
-        function showSuccessToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast success';
-            toast.textContent = message;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                    setTimeout(() => document.body.removeChild(toast), 300);
-                }, 3000);
-            }, 10);
-        }
+      // Fungsi toast modern (contoh sederhana)
+      function showSuccessToast(message) {
+        const toast = document.createElement("div");
+        toast.className = "toast success";
+        toast.textContent = message;
+        document.body.appendChild(toast);
 
-        function showErrorToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast error';
-            toast.textContent = message;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                    setTimeout(() => document.body.removeChild(toast), 300);
-                }, 3000);
-            }, 10);
-        }
+        setTimeout(() => {
+          toast.classList.add("show");
+          setTimeout(() => {
+            toast.classList.remove("show");
+            setTimeout(() => document.body.removeChild(toast), 300);
+          }, 3000);
+        }, 10);
+      }
+
+      function showErrorToast(message) {
+        const toast = document.createElement("div");
+        toast.className = "toast error";
+        toast.textContent = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+          toast.classList.add("show");
+          setTimeout(() => {
+            toast.classList.remove("show");
+            setTimeout(() => document.body.removeChild(toast), 300);
+          }, 3000);
+        }, 10);
+      }
     </script>
-</body>
+  </body>
 </html>
