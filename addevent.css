@@ -1,0 +1,321 @@
+/* Reset dan Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #6C63FF, #48C6EF);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Styles */
+.container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    padding: 30px 25px;
+    position: relative;
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #6C63FF;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* Form Styles */
+#addEventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Input Styles */
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6C63FF;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Button Styles */
+button {
+    background-color: #6C63FF;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #574FDB;
+    box-shadow: 0 7px 14px rgba(108, 99, 255, 0.3);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input, textarea, button {
+        font-size: 14px;
+    }
+}
+
+/* Form Validation Styles */
+input:invalid,
+textarea:invalid {
+    border-color: #e74c3c;
+}
+
+input:valid,
+textarea:valid {
+    border-color: #2ecc71;
+}
+
+/* Toast Styles for Feedback */
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;/* Reset dan Base Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #6C63FF, #48C6EF);
+        color: #333;
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+    
+    /* Container Styles */
+    .container {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        width: 100%;
+        padding: 40px 30px;
+        position: relative;
+    }
+    
+    /* Heading Styles */
+    h1 {
+        text-align: center;
+        color: #333;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    
+    h1::after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background-color: #6C63FF;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+    
+    /* Form Styles */
+    #addEventForm {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    /* Input and Textarea Styles */
+    input, textarea {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 14px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.3s ease;
+        background-color: #f9f9f9;
+    }
+    
+    input:focus,
+    textarea:focus {
+        border-color: #6C63FF;
+        box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+    }
+    
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    
+    /* Placeholder Styles */
+    ::placeholder {
+        color: #bbb;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+    
+    /* Button Styles */
+    button {
+        background-color: #6C63FF;
+        color: white;
+        border: none;
+        padding: 14px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+    }
+    
+    button:hover {
+        background-color: #574FDB;
+        box-shadow: 0 7px 14px rgba(108, 99, 255, 0.3);
+    }
+    
+    button:active {
+        transform: translateY(1px);
+    }
+    
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        color: white;
+        opacity: 0;
+        z-index: 1000;
+        font-size: 14px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .toast.success {
+        background-color: #2ecc71;
+    }
+    
+    .toast.error {
+        background-color: #e74c3c;
+    }
+    
+    .toast.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    /* Validation Feedback */
+    input:invalid,
+    textarea:invalid {
+        border-color: #e74c3c;
+    }
+    
+    input:valid,
+    textarea:valid {
+        border-color: #2ecc71;
+    }
+    
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+        .container {
+            padding: 20px;
+        }
+    
+        h1 {
+            font-size: 20px;
+        }
+    
+        input, textarea, button {
+            font-size: 14px;
+        }
+    }
+    
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.success {
+    background-color: #2ecc71;
+}
+
+.toast.error {
+    background-color: #e74c3c;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terima Kasih</title>
-    <link rel="shortcut icon" href="images/konseria.png" /> 
-    <link rel="stylesheet" href="sty.css">
+    <link rel="shortcut icon" href="images/konseria.png" />
+    <link rel="stylesheet" href="thankyou.css">
 </head>
 <body>
     <div class="thank-you-page">
@@ -14,8 +14,58 @@
             <h1>Terima Kasih!</h1>
             <p>Pembayaran Anda telah berhasil.</p>
             <p>Konfirmasi telah dikirim ke email Anda.</p>
+
+            <!-- Bagian Struk Pembelian -->
+            <div id="receipt">
+                <h2>Struk Pembelian</h2>
+                <p><strong>ID Pesanan:</strong> <span id="orderId"></span></p>
+                <p><strong>Nama:</strong> <span id="customerName"></span></p>
+                <p><strong>Email:</strong> <span id="customerEmail"></span></p>
+                <p><strong>WhatsApp:</strong> <span id="customerWhatsapp"></span></p>
+                <p><strong>Daftar Tiket:</strong></p>
+                <ul id="itemsList"></ul>
+                <p><strong>Subtotal:</strong> Rp<span id="subtotal"></span></p>
+                <p><strong>Biaya Admin:</strong> Rp<span id="adminFee"></span></p>
+                <p><strong>Total Pembayaran:</strong> Rp<span id="totalPrice"></span></p>
+            </div>
+
             <a href="index.html" class="thank-you-button">Kembali ke Beranda</a>
         </div>
     </div>
+
+    <script>
+        // Mengambil data struk dari localStorage
+        const orderData = JSON.parse(localStorage.getItem("orderReceipt"));
+        const ADMIN_FEE_PER_ITEM = 5000; // Biaya admin per item
+
+        if (orderData) {
+            // Menampilkan data ke elemen HTML
+            document.getElementById("orderId").textContent = orderData.orderId;
+            document.getElementById("customerName").textContent = orderData.customer.fullName;
+            document.getElementById("customerEmail").textContent = orderData.customer.email;
+            document.getElementById("customerWhatsapp").textContent = orderData.customer.whatsapp;
+
+            // Hitung subtotal dan biaya admin
+            const subtotal = orderData.items.reduce((total, item) => total + item.ticketPrice * item.quantity, 0);
+            const totalQuantity = orderData.items.reduce((total, item) => total + item.quantity, 0);
+            const adminFee = totalQuantity * ADMIN_FEE_PER_ITEM;
+            const totalPayment = subtotal + adminFee;
+
+            document.getElementById("subtotal").textContent = subtotal.toLocaleString();
+            document.getElementById("adminFee").textContent = adminFee.toLocaleString();
+            document.getElementById("totalPrice").textContent = totalPayment.toLocaleString();
+
+            // Menampilkan daftar tiket
+            const itemsList = document.getElementById("itemsList");
+            orderData.items.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${item.title} (x${item.quantity}) - Rp${(item.ticketPrice * item.quantity).toLocaleString()}`;
+                itemsList.appendChild(listItem);
+            });
+        } else {
+            // Jika data struk tidak ditemukan
+            document.getElementById("receipt").innerHTML = "<p>Struk tidak tersedia.</p>";
+        }
+    </script>
 </body>
 </html>

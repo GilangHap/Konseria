@@ -1,6 +1,6 @@
 // Variabel Global
 let totalPrice = 0;
-const ADMIN_FEE = 5000;
+const ADMIN_FEE_PER_ITEM = 5000;
 
 // Fungsi untuk menambah item ke keranjang
 function addToCart(event) {
@@ -39,6 +39,7 @@ function renderCartItems() {
   if (cartItems.length === 0) {
     cartItemsList.innerHTML = "<p>Keranjang Anda kosong</p>";
     document.getElementById("subtotalPrice").textContent = "Rp 0";
+    document.getElementById("adminFee").textContent = "Rp 0";
     document.getElementById("totalPrice").textContent = "Rp 0";
     return;
   }
@@ -54,14 +55,29 @@ function renderCartItems() {
         </div>
       </div>
       <div class="item-actions">
-        <button onclick="updateQuantity('${item.id}', -1)">-</button>
+        <button class="btn-decrease">-</button>
         <span>${item.quantity}</span>
-        <button onclick="updateQuantity('${item.id}', 1)">+</button>
-        <button onclick="removeFromCart('${item.id}')">Hapus</button>
+        <button class="btn-increase">+</button>
+        <button class="btn-delete">Hapus</button>
       </div>
     `;
+  
+    // Tambahkan event listener
+    cartItemElement.querySelector(".btn-decrease").addEventListener("click", () => {
+      updateQuantity(item.id, -1);
+    });
+  
+    cartItemElement.querySelector(".btn-increase").addEventListener("click", () => {
+      updateQuantity(item.id, 1);
+    });
+  
+    cartItemElement.querySelector(".btn-delete").addEventListener("click", () => {
+      removeFromCart(item.id);
+    });
+  
     cartItemsList.appendChild(cartItemElement);
   });
+  
   updateOrderSummary();
 }
 
@@ -99,15 +115,25 @@ function removeFromCart(eventId) {
 function updateOrderSummary() {
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+  // Hitung subtotal dan total quantity
   const subtotal = cartItems.reduce((total, item) => {
     return total + item.ticketPrice * item.quantity;
   }, 0);
 
-  totalPrice = subtotal + ADMIN_FEE;
+  const totalQuantity = cartItems.reduce((total, item) => {
+    return total + item.quantity;
+  }, 0);
 
+  // Hitung admin fee berdasarkan total quantity
+  const adminFee = totalQuantity * ADMIN_FEE_PER_ITEM;
+  totalPrice = subtotal + adminFee;
+
+  // Update tampilan subtotal, admin fee, dan total harga
   document.getElementById("subtotalPrice").textContent = `Rp ${subtotal.toLocaleString()}`;
+  document.getElementById("adminFee").textContent = `Rp ${adminFee.toLocaleString()}`;
   document.getElementById("totalPrice").textContent = `Rp ${totalPrice.toLocaleString()}`;
 }
+
 
 // Fungsi untuk memproses checkout
 async function processCheckout() {
@@ -131,10 +157,10 @@ async function processCheckout() {
     (total, item) => total + item.ticketPrice * item.quantity,
     0
   );
-  const totalWithAdminFee = subtotal + ADMIN_FEE;
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalWithAdminFee = subtotal + totalQuantity * ADMIN_FEE_PER_ITEM;
   const orderId = "order_" + new Date().getTime();
 
-  // Mempersiapkan data untuk dikirim ke backend
   const orderData = {
     orderId: orderId,
     customer: { fullName, email, whatsapp },
@@ -153,19 +179,34 @@ async function processCheckout() {
     );
 
     const result = await response.json();
-    console.log("Server Response:", result);
 
     if (result.token) {
-      // Panggil Snap Dialog Midtrans
       window.snap.pay(result.token, {
-        onSuccess: function (res) {
-          localStorage.removeItem("cartItems");
-          window.location.href = "/konseria/thank_you.html";
+        onSuccess: async function () {
+          // Update stok tiket di server
+          const stockUpdateResponse = await fetch(
+            "http://localhost/konseria/server/update_ticket_stock.php",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ items: cartItems }),
+            }
+          );
+
+          const stockResult = await stockUpdateResponse.json();
+          if (stockResult.success) {
+            // Simpan struk dan alihkan ke halaman Thank You
+            localStorage.setItem("orderReceipt", JSON.stringify(orderData));
+            localStorage.removeItem("cartItems");
+            window.location.href = "/konseria/thank_you.html";
+          } else {
+            alert("Gagal memperbarui stok tiket. Hubungi admin.");
+          }
         },
-        onPending: function (res) {
+        onPending: function () {
           alert("Pembayaran menunggu konfirmasi.");
         },
-        onError: function (res) {
+        onError: function () {
           alert("Pembayaran gagal.");
         },
         onClose: function () {
@@ -181,11 +222,26 @@ async function processCheckout() {
   }
 }
 
+
+
 // Inisialisasi
 document.addEventListener("DOMContentLoaded", () => {
   renderCartItems(); // Render item keranjang saat halaman dimuat
   const checkoutButton = document.getElementById("checkoutButton");
   if (checkoutButton) {
     checkoutButton.addEventListener("click", processCheckout);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Ambil URL halaman sebelumnya dari localStorage
+  const backButton = document.getElementById("backButton");
+  const previousEventUrl = localStorage.getItem("previousEventUrl");
+
+  // Tetapkan href pada tombol kembali, jika tersedia
+  if (previousEventUrl) {
+    backButton.href = previousEventUrl;
+  } else {
+    backButton.href = "index.html"; // Default kembali ke halaman utama
   }
 });

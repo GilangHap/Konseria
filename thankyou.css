@@ -1,0 +1,132 @@
+/* Gaya untuk halaman "Terima Kasih" */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.thank-you-page {
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.thank-you-box {
+    background: rgba(255, 255, 255, 0.9); /* Putih semi transparan */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+}
+
+.thank-you-image {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.thank-you-box h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.thank-you-box p {
+    font-size: 1.1em;
+    margin: 5px 0;
+    color: #333;
+}
+
+.thank-you-button {
+    display: inline-block;
+    margin-top: 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.thank-you-button:hover {
+    background: #005bb5;
+}
+
+/* Gaya untuk bagian struk */
+#receipt {
+    text-align: left;
+    margin-top: 20px;
+    background: rgba(240, 240, 240, 0.9); /* Putih abu-abu terang */
+    padding: 20px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 0.95em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#receipt h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+#receipt p {
+    margin: 5px 0;
+    line-height: 1.4em;
+}
+
+#receipt ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#receipt ul li {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+}
+
+#receipt ul li:before {
+    content: "•";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+}
+
+#receipt span {
+    font-weight: bold;
+}
+
+#qrcode {
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 10px;
+    background: white;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .thank-you-box {
+        padding: 20px;
+    }
+
+    .thank-you-box h1 {
+        font-size: 1.8em;
+    }
+
+    #receipt {
+        font-size: 0.9em;
+    }
+}

@@ -1,105 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Gym Management System</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      background-color: #f0f2f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .login-container {
-      background-color: #ffffff;
-      width: 400px;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .login-container h1 {
-      text-align: center;
-      color: #3f8df7;
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-    .login-container form {
-      display: flex;
-      flex-direction: column;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      color: #333;
-      font-weight: bold;
-    }
-    .form-group input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    .form-group input:focus {
-      outline: none;
-      border-color: #3f8df7;
-    }
-    .login-btn {
-      background-color: #3f8df7;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .login-btn:hover {
-      background-color: #3578c7;
-    }
-    .forgot-password {
-      text-align: center;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-    .forgot-password a {
-      color: #3f8df7;
-      text-decoration: none;
-    }
-    .forgot-password a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <title>Login - Konseria</title>
+  <link rel="shortcut icon" href="images/konseria.png">
+  <link rel="stylesheet" href="register.css">
 </head>
 <body>
-  <div class="login-container">
+  <div class="container">
     <h1>Login</h1>
-    <form action="dashboard.html" method="POST">
+    <form id="loginForm">
       <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Masukkan email Anda"
+          required
+        />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <label for="password">Kata Sandi</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Masukkan kata sandi"
+          required
+        />
       </div>
-      <button type="submit" class="login-btn">Login</button>
+      <button type="submit">Login</button>
     </form>
-    <div class="forgot-password">
-      <p>Forgot your password? <a href="#">Click here</a></p>
-    </div>
+    <small>Belum punya akun? <a href="register.html">Daftar sekarang</a></small>
   </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+  
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+  
+      try {
+        const response = await fetch("server/login.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams({ email, password }),
+        });
+  
+        const result = await response.json();
+        if (result.status === "success") {
+          alert(result.message);
+          window.location.href = "add-event.html"; // Redirect setelah login berhasil
+        } else {
+          alert(result.message);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Terjadi kesalahan, coba lagi.");
+      }
+    });
+  </script>
+  
 </body>
 </html>
