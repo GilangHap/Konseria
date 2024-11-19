@@ -911,3 +911,85 @@ Transaction Details: Array
 )
 
 Snap Token: 5025e0a8-8e41-4855-9dbf-00d73e25a215
+Total dari Frontend: 1540000
+Gross Amount yang dikirim: 1545000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1732001484146
+            [gross_amount] => 1650000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 29
+                    [price] => 65000
+                    [quantity] => 22
+                    [name] => Stereo 2024
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 22
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Andhika
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 8b3b6c47-0153-44fc-badb-0681fee9651c
+Total dari Frontend: 280000
+Gross Amount yang dikirim: 285000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1732006617395
+            [gross_amount] => 300000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 6
+                    [price] => 65000
+                    [quantity] => 4
+                    [name] => Pesta Bergoyang
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 4
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 94624414-3f3d-4bee-a3f9-b8fef612c725
