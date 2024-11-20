@@ -76,7 +76,7 @@ function sendReceipt($email, $orderData)
         $mail->Subject = 'Struk Pembayaran Konseria';
         $mail->Body = "
     <div style='font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;'>
-        <div style='background-color: #FF5B5B; padding: 20px; color: white; text-align: center;'>
+        <div style='background-color: #133E87; padding: 20px; color: white; text-align: center;'>
             <h1 style='margin: 0; font-size: 24px;'>BUKTI TRANSAKSI</h1>
         </div>
         <div style='padding: 20px;'>
@@ -123,7 +123,7 @@ function sendReceipt($email, $orderData)
             </div>
         </div>
 
-        <div style='background-color: #FF5B5B; padding: 10px; color: white; text-align: center;'>
+        <div style='background-color: #133E87; padding: 10px; color: white; text-align: center;'>
             <p style='margin: 0; font-size: 12px;'>© 2024 Konseria. All rights reserved.</p>
         </div>
     </div>
