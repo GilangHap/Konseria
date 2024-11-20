@@ -42,11 +42,17 @@ function sendReceipt($email, $orderData)
         $adminFee = $totalQuantity * 5000;
         $totalPrice = $subtotal + $adminFee;
 
+        $itemsListText = '';
+        foreach ($items as $item) {
+            $itemsListText .= "{$item['title']} (x{$item['quantity']}), ";
+        }
+        $itemsListText = rtrim($itemsListText, ', '); // Hapus koma terakhir
+
         // Membuat QR Code
         $qrCodeResult = Builder::create()
-        ->writer(new PngWriter()) // Gunakan PngWriter
-        ->data("Order ID: $orderId\nName: $customerName\nTotal: Rp" . number_format($totalPrice, 0, ',', '.'))
-        ->size(150) // Atur ukuran QR Code (pixel)
+        ->writer(new PngWriter()) 
+        ->data("Order ID: $orderId\nName: $customerName\nItems: $itemsListText\nTotal: Rp" . number_format($totalPrice, 0, ',', '.'))
+        ->size(150) 
         ->margin(5)
         ->build();
 
@@ -69,30 +75,60 @@ function sendReceipt($email, $orderData)
         $mail->isHTML(true);
         $mail->Subject = 'Struk Pembayaran Konseria';
         $mail->Body = "
-        <div style='font-family: Arial, sans-serif; max-width: 600px; margin: auto;'>
-            <h1 style='text-align: center; color: #6C63FF;'>Terima Kasih!</h1>
-            <p style='text-align: center;'>Pembayaran Anda telah berhasil.</p>
-            <p style='text-align: center;'>Berikut detail pembelian Anda:</p>
-            <div style='border: 1px solid #ddd; padding: 20px; border-radius: 8px; background: #f9f9f9;'>
-                <h2 style='margin-bottom: 10px;'>Struk Pembelian</h2>
-                <p><strong>ID Pesanan:</strong> $orderId</p>
-                <p><strong>Nama:</strong> $customerName</p>
-                <p><strong>Email:</strong> $customerEmail</p>
-                <p><strong>Daftar Tiket:</strong></p>
-                <ul style='padding-left: 20px;'>
-                    $itemsListHTML
-                </ul>
-                <p><strong>Subtotal:</strong> Rp" . number_format($subtotal, 0, ',', '.') . "</p>
-                <p><strong>Biaya Admin:</strong> Rp" . number_format($adminFee, 0, ',', '.') . "</p>
-                <p><strong>Total Pembayaran:</strong> Rp" . number_format($totalPrice, 0, ',', '.') . "</p>
-                <p><strong>QR Code Tiket Anda:</strong></p>
-                <div style='text-align: center;'>
-                    <img src='cid:qrcode' alt='QR Code' style='width: 150px; height: auto;'/>
-                </div>
-            </div>
-            <p style='text-align: center; margin-top: 20px;'>Semoga Anda menikmati acara!</p>
+    <div style='font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;'>
+        <div style='background-color: #FF5B5B; padding: 20px; color: white; text-align: center;'>
+            <h1 style='margin: 0; font-size: 24px;'>BUKTI TRANSAKSI</h1>
         </div>
-        ";
+        <div style='padding: 20px;'>
+            <p>Halo <strong>$customerName</strong>,</p>
+            <p>Transaksi kamu telah selesai kami proses dan bukti transaksinya terlampir pada email ini.</p>
+
+            <h3 style='margin-bottom: 10px; font-size: 18px;'>Detail Transaksi</h3>
+            <table style='width: 100%; border-collapse: collapse; font-size: 14px;'>
+                <tr>
+                    <td style='padding: 5px 0;'>ID Pesanan</td>
+                    <td style='padding: 5px 0; text-align: right;'>#{$orderId}</td>
+                </tr>
+                <tr>
+                    <td style='padding: 5px 0;'>Nama</td>
+                    <td style='padding: 5px 0; text-align: right;'>$customerName</td>
+                </tr>
+                <tr>
+                    <td style='padding: 5px 0;'>Email</td>
+                    <td style='padding: 5px 0; text-align: right;'>$customerEmail</td>
+                </tr>
+                <tr>
+                    <td style='padding: 5px 0;'>Daftar Tiket</td>
+                    <td style='padding: 5px 0; text-align: right;'>
+                        <ul style='margin: 0; padding-left: 20px; text-align: left;'>$itemsListHTML</ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='padding: 5px 0;'>Subtotal</td>
+                    <td style='padding: 5px 0; text-align: right;'>Rp" . number_format($subtotal, 0, ',', '.') . "</td>
+                </tr>
+                <tr>
+                    <td style='padding: 5px 0;'>Biaya Admin</td>
+                    <td style='padding: 5px 0; text-align: right;'>Rp" . number_format($adminFee, 0, ',', '.') . "</td>
+                </tr>
+                <tr>
+                    <td style='padding: 5px 0;'>Total Pembayaran</td>
+                    <td style='padding: 5px 0; text-align: right; font-weight: bold;'>Rp" . number_format($totalPrice, 0, ',', '.') . "</td>
+                </tr>
+            </table>
+
+            <div style='margin-top: 20px; text-align: center;'>
+                <p><strong>QR Code Tiket Anda:</strong></p>
+                <img src='cid:qrcode' alt='QR Code' style='width: 150px; height: auto;'/>
+            </div>
+        </div>
+
+        <div style='background-color: #FF5B5B; padding: 10px; color: white; text-align: center;'>
+            <p style='margin: 0; font-size: 12px;'>© 2024 Konseria. All rights reserved.</p>
+        </div>
+    </div>
+";
+
 
         // Lampirkan QR code ke email menggunakan inline image
         $mail->addEmbeddedImage($qrCodePath, 'qrcode');

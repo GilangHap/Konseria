@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #007bff, #00d4ff);
+    background: linear-gradient(135deg, #6C63FF, #48C6EF);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -46,7 +46,7 @@ body {
 .thank-you-button {
     display: inline-block;
     margin-top: 20px;
-    background: #007bff;
+    background: #6C63FF;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -56,7 +56,7 @@ body {
 }
 
 .thank-you-button:hover {
-    background: #005bb5;
+    background: #4B47CC;
 }
 
 /* Gaya untuk bagian struk */

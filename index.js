@@ -44,51 +44,76 @@ document.addEventListener("DOMContentLoaded", () => {
   // Geser otomatis setiap 3 detik
   setInterval(nextSlide, 3000);
 
-
   function formatRupiah(value) {
-    return new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
     }).format(value);
-}
-
+  }
+  function formatDate(dateString) {
+    const months = [
+      "Januari",
+      "Februari",
+      "Maret",
+      "April",
+      "Mei",
+      "Juni",
+      "Juli",
+      "Agustus",
+      "September",
+      "Oktober",
+      "November",
+      "Desember",
+    ];
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  }
 
   // Fungsi untuk menampilkan event
   function displayEvents(events) {
     eventList.innerHTML = ""; // Bersihkan daftar event sebelumnya
 
     if (events.length === 0) {
-        eventList.innerHTML = "<p>Tidak ada event ditemukan.</p>";
-        return;
+      eventList.innerHTML = "<p>Tidak ada event ditemukan.</p>";
+      return;
     }
 
     events.forEach((event) => {
-        const eventLink = document.createElement("a");
-        eventLink.href = `detail.html?id=${event.id}`;
-        eventLink.classList.add("event-card-link"); // Tambahkan class jika diperlukan untuk styling
-        eventLink.style.textDecoration = "none";
+      const eventLink = document.createElement("a");
+      eventLink.href = `detail.html?id=${event.id}`;
+      eventLink.classList.add("event-card-link"); // Tambahkan class jika diperlukan untuk styling
+      eventLink.style.textDecoration = "none";
 
-        const eventCard = document.createElement("div");
-        eventCard.classList.add("event-card");
+      const eventCard = document.createElement("div");
+      eventCard.classList.add("event-card");
 
-        // Pastikan semua properti event tersedia
-        eventCard.innerHTML = `
-            <img src="${event.imageURL || "/images/default-image.jpg"}" alt="${event.title || "Event"}">
+      // Pastikan semua properti event tersedia
+      eventCard.innerHTML = `
+            <img src="${event.imageURL || "/images/default-image.jpg"}" alt="${
+        event.title || "Event"
+      }">
             <h3>${event.title || "Judul Tidak Tersedia"}</h3>
-            <p>📅 ${event.date || "Tanggal Tidak Tersedia"}</p>
+            <p>📅 ${formatDate(event.date) || "Tanggal Tidak Tersedia"}</p>
             <p>📍 ${event.location || "Lokasi Tidak Tersedia"}</p>
-            <p>💰 ${event.ticketPrice ? formatRupiah(event.ticketPrice) : "Harga Tidak Tersedia"}</p>
+            <p>💰 ${
+              event.ticketPrice
+                ? formatRupiah(event.ticketPrice)
+                : "Harga Tidak Tersedia"
+            }</p>
             <button>Beli Tiket</button>
         `;
 
-        // Masukkan event-card ke dalam event-link
-        eventLink.appendChild(eventCard);
+      // Masukkan event-card ke dalam event-link
+      eventLink.appendChild(eventCard);
 
-        // Tambahkan link ke dalam daftar event
-        eventList.appendChild(eventLink);
+      // Tambahkan link ke dalam daftar event
+      eventList.appendChild(eventLink);
     });
-}
+  }
 
   // Ambil event dari server
   function fetchEvents() {
@@ -119,6 +144,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Pencarian event
   function searchEvents() {
     const searchTerm = searchInput.value.toLowerCase().trim();
+
+    // Ubah teks judul menjadi kata kunci pencarian
+    const eventTitle = document.getElementById("eventTitle");
+    if (searchTerm) {
+      eventTitle.textContent = `Hasil Pencarian: ${searchTerm}`;
+    } else {
+      eventTitle.textContent = "Rekomendasi Event";
+    }
 
     // Tambahkan loading state
     eventList.innerHTML = '<div class="loading">Mencari events...</div>';

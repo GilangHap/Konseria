@@ -1,10 +1,12 @@
 <?php
 header("Content-Type: application/json");
 
-// Koneksi ke database
-$conn = new mysqli("localhost", "root", "", "konseria");
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$dbname = "konseria"; 
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Periksa koneksi
 if ($conn->connect_error) {
     die(json_encode(["error" => "Database connection failed"]));
 }

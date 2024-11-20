@@ -10,6 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    function formatDate(dateString) {
+        const months = [
+          "Januari",
+          "Februari",
+          "Maret",
+          "April",
+          "Mei",
+          "Juni",
+          "Juli",
+          "Agustus",
+          "September",
+          "Oktober",
+          "November",
+          "Desember",
+        ];
+        const date = new Date(dateString);
+        const day = date.getDate();
+        const month = months[date.getMonth()];
+        const year = date.getFullYear();
+        return `${day} ${month} ${year}`;
+      }
+
     // Fetch data event dari backend PHP
     fetch(`./server/detail.php?id=${eventId}`)
         .then(response => response.json())
@@ -22,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('eventMainImage').src = event.imageURL;
                 document.getElementById('organizerLogo').src = event.organizerImage;
                 document.getElementById('organizerName').innerText = event.organizer;
-                document.getElementById('eventDate').innerText = event.date;
+                document.getElementById('eventDate').innerText = formatDate(event.date);
                 document.getElementById('eventTime').innerText = event.time;
                 document.getElementById('eventLocation').innerText = event.location;
                 document.getElementById('eventDescription').innerText = event.description;
