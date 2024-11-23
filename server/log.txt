@@ -137,3 +137,44 @@ Transaction Details: Array
 )
 
 Snap Token: c3ec6fc7-b162-4e7b-93bc-f9e3d0e6cc04
+Total dari Frontend: 55000
+Gross Amount yang dikirim: 60000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1732341758015
+            [gross_amount] => 60000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 7
+                    [price] => 50000
+                    [quantity] => 1
+                    [name] => On Fest 2024
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 1
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => gilang
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 111
+        )
+
+)
+
+Snap Token: 866b0cb4-d338-4149-b5dc-c33a7e16936a

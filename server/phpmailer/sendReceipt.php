@@ -79,8 +79,8 @@ function sendReceipt($email, $orderData)
         <div style='background-color: #133E87; padding: 20px; color: white; text-align: center;'>
             <h1 style='margin: 0; font-size: 24px;'>BUKTI TRANSAKSI</h1>
         </div>
-        <div style='padding: 20px;'>
-            <p>Halo <strong>$customerName</strong>,</p>
+        <div style='padding: 20px; color: #000000; '>
+            <p style='font-size: 18px;'>Halo <strong>$customerName</strong>,</p>
             <p>Transaksi kamu telah selesai kami proses dan bukti transaksinya terlampir pada email ini.</p>
 
             <h3 style='margin-bottom: 10px; font-size: 18px;'>Detail Transaksi</h3>
