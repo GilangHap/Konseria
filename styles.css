@@ -61,6 +61,10 @@ nav a {
   font-weight: bold;
 }
 
+nav a:hover {
+  color: rgb(0, 0, 0);
+}
+
 .search-bar {
   display: flex;
   align-items: center;
@@ -91,6 +95,10 @@ nav a {
   cursor: pointer;
   font-weight: bold;
   margin-right: 100px;
+}
+.create-event:hover {
+  background-color: #FFC107;
+  color: white;
 }
 
 /* Atur kontainer utama agar map dan info sejajar */
