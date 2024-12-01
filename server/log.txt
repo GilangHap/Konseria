@@ -178,3 +178,347 @@ Transaction Details: Array
 )
 
 Snap Token: 866b0cb4-d338-4149-b5dc-c33a7e16936a
+Total dari Frontend: 470000
+Gross Amount yang dikirim: 475000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1732521785383
+            [gross_amount] => 495000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 5
+                    [name] => MAKNAFESTIVA
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 5
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Darrel
+            [last_name] => 
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 70b85505-d6a7-4934-b939-07fa837b42d0
+Total dari Frontend: 258000
+Gross Amount yang dikirim: 263000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1732550906456
+            [gross_amount] => 273000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 2
+                    [name] => MAKNAFESTIVA
+                )
+
+            [1] => Array
+                (
+                    [id] => 29
+                    [price] => 65000
+                    [quantity] => 1
+                    [name] => Stereo 2024
+                )
+
+            [2] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 3
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Eka
+            [last_name] => Bintang
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 894ba87b-914d-4857-80d6-19c8b816af25
+Total dari Frontend: 258000
+Gross Amount yang dikirim: 263000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1732550970964
+            [gross_amount] => 273000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 2
+                    [name] => MAKNAFESTIVA
+                )
+
+            [1] => Array
+                (
+                    [id] => 29
+                    [price] => 65000
+                    [quantity] => 1
+                    [name] => Stereo 2024
+                )
+
+            [2] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 3
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Eka
+            [last_name] => Bintang
+            [email] => gilanghappy123@gmail.com
+            [phone] => 62093176338
+        )
+
+)
+
+Snap Token: 519fcf29-6311-479f-8018-d9011b494cd8
+Total dari Frontend: 94000
+Gross Amount yang dikirim: 99000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1732551385803
+            [gross_amount] => 99000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 5
+                    [price] => 89000
+                    [quantity] => 1
+                    [name] => MAKNAFESTIVA
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 1
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Panca
+            [last_name] => Aziz
+            [email] => gilanghappy123@gmail.com
+            [phone] => 1
+        )
+
+)
+
+Snap Token: 0bcfaa9e-08d8-4cb6-aaba-c04f6659d714
+Total dari Frontend: 560000
+Gross Amount yang dikirim: 565000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1733056028770
+            [gross_amount] => 600000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 29
+                    [price] => 65000
+                    [quantity] => 8
+                    [name] => Stereo 2024
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 8
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Admin
+            [last_name] => 
+            [email] => aaa
+            [phone] => 111
+        )
+
+)
+
+Error: Midtrans API is returning API error. HTTP status code: 400 API response: {"error_messages":["customer_details.email format is invalid"]}
+Total dari Frontend: 560000
+Gross Amount yang dikirim: 565000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1733056041561
+            [gross_amount] => 600000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 29
+                    [price] => 65000
+                    [quantity] => 8
+                    [name] => Stereo 2024
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 8
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Admin
+            [last_name] => 
+            [email] => kons
+            [phone] => 111
+        )
+
+)
+
+Error: Midtrans API is returning API error. HTTP status code: 400 API response: {"error_messages":["customer_details.email format is invalid"]}
+Total dari Frontend: 560000
+Gross Amount yang dikirim: 565000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1733056054457
+            [gross_amount] => 600000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 29
+                    [price] => 65000
+                    [quantity] => 8
+                    [name] => Stereo 2024
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 8
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Admin
+            [last_name] => 
+            [email] => abogo@gmail.com
+            [phone] => 111
+        )
+
+)
+
+Snap Token: 699f9f81-94d3-4d21-85e1-0addd192ec20
+Total dari Frontend: 560000
+Gross Amount yang dikirim: 565000
+Transaction Details: Array
+(
+    [transaction_details] => Array
+        (
+            [order_id] => order_1733056086102
+            [gross_amount] => 600000
+        )
+
+    [item_details] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 29
+                    [price] => 65000
+                    [quantity] => 8
+                    [name] => Stereo 2024
+                )
+
+            [1] => Array
+                (
+                    [id] => admin_fee
+                    [price] => 5000
+                    [quantity] => 8
+                    [name] => Biaya Admin
+                )
+
+        )
+
+    [customer_details] => Array
+        (
+            [first_name] => Admin
+            [last_name] => 
+            [email] => gilangdwinugroho@mhs.unsoed.ac.id
+            [phone] => 0812345678123
+        )
+
+)
+
+Snap Token: ec648a3c-e889-4b1c-bc6c-11093b320b5c

@@ -104,23 +104,24 @@ nav a:hover {
 /* Atur kontainer utama agar map dan info sejajar */
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
-  padding: 20px 50px;
+  gap: 30px;
+  padding: 40px 50px;
   max-width: 1200px;
   margin: 0 auto; /* Pusatkan kontainer */
 }
 
-/* Map setengah layar */
+/* Map setengah layar dengan border melengkung */
 .map iframe {
-  width: 750px; /* Setengah layar */
-  height: 450px;
+  width: 100%;
+  width: 700px; /* Maksimal lebar iframe */
+  height: 400px;
   border-radius: 10px;
   border: 2px solid #007bff;
 }
 
-/* Info di sebelah kanan */
+/* Info di sebelah kanan dengan padding dan text styling */
 .info {
   flex: 1;
   text-align: left;
@@ -128,29 +129,37 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   padding-left: 20px;
+  background-color: #f7f7f7; /* Latar belakang terang untuk kontras */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  padding: 30px;
+  max-width: 450px; /* Membatasi lebar info */
 }
 
 .info h2 {
-  font-size: 28px;
+  font-size: 30px;
   color: #007bff;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .info p {
   margin-bottom: 20px;
   font-size: 16px;
-  color: #333;
+  color: #555;
 }
 
 .info ul {
   list-style: none;
   padding: 0;
+  margin-top: 20px;
 }
 
 .info ul li {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  font-size: 16px;
 }
 
 .info ul li span {
@@ -158,14 +167,17 @@ nav a:hover {
   width: 25px;
   text-align: center;
   font-size: 18px;
+  color: #007bff;
+  margin-right: 15px;
 }
 
 /* Judul berada di tengah */
 .content h1 {
   text-align: center;
-  font-size: 32px;
-  margin: 30px 0;
+  font-size: 36px;
+  margin: 50px 0;
   color: #007bff;
+  font-weight: bold;
 }
 
 /* Responsif untuk layar kecil */

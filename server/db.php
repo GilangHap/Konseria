@@ -1,9 +1,9 @@
 <?php
 // Konfigurasi database
-$host = "localhost"; // Host database (default: localhost)
-$username = "root";  // Username database (default: root untuk XAMPP)
-$password = "";      // Password database (kosong untuk default XAMPP)
-$dbname = "konseria";   // Nama database
+$host = "localhost"; 
+$username = "root";  
+$password = "";      
+$dbname = "konseria";  
 
 // Membuat koneksi
 $conn = new mysqli($host, $username, $password, $dbname);

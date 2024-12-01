@@ -1,10 +1,5 @@
 <?php
-// Koneksi ke database
-$conn = new mysqli('localhost', 'root', '', 'konseria');
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
 
 $sql = "SELECT * FROM orders";
 $result = $conn->query($sql);
