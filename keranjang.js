@@ -200,7 +200,7 @@ async function processCheckout() {
             localStorage.removeItem("cartItems");
             window.location.href = "/konseria/thank_you.html";
           } else {
-            alert("Gagal memperbarui stok tiket. Hubungi admin.");
+            alert("Gagal memperbarui stok tiket.");
           }
         },
         onPending: function () {

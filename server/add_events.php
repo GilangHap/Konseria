@@ -1,5 +1,4 @@
 <?php
-// add_event.php
 
 // Mengatur header untuk menerima JSON
 header('Content-Type: application/json');

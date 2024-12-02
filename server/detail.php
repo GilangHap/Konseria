@@ -1,13 +1,13 @@
 <?php
-require_once 'db.php'; // Pastikan koneksi database sudah benar
+require_once 'db.php'; 
 
-// Cek apakah parameter ID ada
+// Cek parameter ID
 if (isset($_GET['id'])) {
     $eventId = $_GET['id'];
 
     // Query ke database
     $query = $conn->prepare("SELECT * FROM event WHERE id = ?");
-    $query->bind_param("i", $eventId); // "i" menunjukkan tipe data integer
+    $query->bind_param("i", $eventId);
     $query->execute();
     $result = $query->get_result();
 

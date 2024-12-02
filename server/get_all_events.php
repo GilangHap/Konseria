@@ -18,7 +18,7 @@ $bulanIndonesia = [
 ];
 
 // Ambil data event
-$sql = "SELECT * FROM event ORDER BY date ASC LIMIT 6"; // Ganti dengan nama tabel Anda
+$sql = "SELECT * FROM event ORDER BY date ASC"; // Ganti dengan nama tabel Anda
 $result = $conn->query($sql);
 
 $events = [];

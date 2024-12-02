@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function fetchEvents() {
     eventList.innerHTML = '<div class="loading">Memuat events...</div>'; // Tambahkan loading state
 
-    fetch("server/get_events.php") // Memanggil endpoint PHP
+    fetch("server/get_events.php") 
       .then((response) => {
         if (!response.ok) {
           throw new Error(

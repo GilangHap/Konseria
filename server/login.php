@@ -1,17 +1,5 @@
 <?php
-// Konfigurasi koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "konseria"; // Ganti dengan nama database Anda
-
-// Buat koneksi
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Periksa koneksi
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
+include 'db.php';
 
 // Tangkap data dari request
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

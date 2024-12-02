@@ -1,15 +1,7 @@
 <?php
 header("Content-Type: application/json");
 
-$servername = "localhost";
-$username = "root"; 
-$password = ""; 
-$dbname = "konseria"; 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die(json_encode(["error" => "Database connection failed"]));
-}
+include 'db.php';
 
 // Ambil data dari request
 $data = json_decode(file_get_contents("php://input"), true);
