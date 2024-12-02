@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
     prevButton.addEventListener("click", prevSlide);
   }
 
-  // Geser otomatis setiap 3 detik
-  setInterval(nextSlide, 3000);
+  // Geser otomatis setiap 5 detik
+  setInterval(nextSlide, 5000);
 
   function formatRupiah(value) {
     return new Intl.NumberFormat("id-ID", {
